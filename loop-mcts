@@ -1,0 +1,107 @@
+#!/bin/bash
+
+
+uct[0]=0.8
+uct[1]=0.7
+
+
+
+
+#n_tre[0]=30
+n_tre[0]=50
+n_tre[1]=30
+#n_tre[4]=120
+#n_tre[5]=200
+
+
+#tim[0]=30
+tim[1]=60
+#tim[2]=90
+#tim[3]=5
+
+game_limit=100
+game_goal="from_corner_to_ok_corner"
+mcts_black_heuristics="heuristics"
+
+
+for tim_val in ${tim[@]}
+do
+#   for uct_val in ${uct[@]} 
+#     do
+
+    #first run
+    dirname1=mcts-BH_$mcts_black_heuristics-limit_${game_limit}-${game_goal}-${tim_val}s-uct_${uct[0]}-n_${n_tre[0]}
+    dirname2=mcts-BH_$mcts_black_heuristics-limit_${game_limit}-${game_goal}-${tim_val}s-uct_${uct[0]}-n_${n_tre[1]}
+    dirname3=mcts-BH_$mcts_black_heuristics-limit_${game_limit}-${game_goal}-${tim_val}s-uct_${uct[1]}-n_${n_tre[0]}
+    dirname4=mcts-BH_$mcts_black_heuristics-limit_${game_limit}-${game_goal}-${tim_val}s-uct_${uct[1]}-n_${n_tre[1]}
+    mkdir $dirname1
+    mkdir $dirname2
+    mkdir $dirname3
+    mkdir $dirname4
+
+    for ((i=0;i<5;i+=1)); do
+	echo starting: $dirname1
+	cd $dirname1
+	mkdir tree-$((i+1))
+	ln -s ../white_t.txt
+	ln -s ../black_t.txt
+	../QtMCTS $tim_val $game_limit ${n_tre[0]} ${uct[0]} $dirname1 > output.txt &
+	cd ..
+
+	echo starting: $dirname2
+	cd $dirname2
+	ln -s ../white_t.txt
+	ln -s ../black_t.txt
+	mkdir tree-$((i+1))
+	../QtMCTS $tim_val $game_limit ${n_tre[1]} ${uct[0]} $dirname2 > output.txt &
+	cd ..
+
+	echo starting: $dirname3
+	cd $dirname3
+	ln -s ../white_t.txt
+	ln -s ../black_t.txt
+	mkdir tree-$((i+1))
+	../QtMCTS $tim_val $game_limit ${n_tre[0]} ${uct[1]} $dirname3 > output.txt &
+	cd ..
+
+	echo starting: $dirname4
+	cd $dirname4
+	ln -s ../white_t.txt
+	ln -s ../black_t.txt
+	mkdir tree-$((i+1))
+	../QtMCTS $tim_val $game_limit ${n_tre[1]} ${uct[1]} $dirname4 > output.txt &
+	cd ..
+
+	while [ "$(pidof -s QtMCTS)" ]; do
+	    sleep 30
+	done
+	echo Processing ended... Copying files....
+
+	cd $dirname1
+	mv output.txt *.dot tree-$((i+1))
+	cd ..
+
+	cd $dirname2
+	mv output.txt *.dot tree-$((i+1))
+	cd ..
+
+	cd $dirname3
+	mv output.txt *.dot tree-$((i+1))
+	cd ..
+
+	cd $dirname4
+	mv output.txt *.dot tree-$((i+1))
+	cd ..
+
+	echo Copying complete....
+
+    done
+
+
+
+#	mv $dirname.png $dirname/
+#    cp ./loop-graphviz $dirname
+#   $dirname/loop-graphviz
+#   done
+done
+

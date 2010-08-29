@@ -1,0 +1,4 @@
+- poteza črnega ki ni preiskana??!!
+- UCT v prvi člen daj samo vrednost (vrednost == število zmag in ne neka kombinacija seštevanj in odštevanj)
+- floating point exception (verjetno pri UCT?)
+- ipiši oba dela UCT
