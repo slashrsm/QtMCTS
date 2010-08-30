@@ -1,11 +1,11 @@
 #!/bin/bash
 
-for d in `ls -d mcts-BH*`;
-  do
-  cd $d
-for c in `ls -d tree-?`;
-  do
-  cd $c
+# for d in `ls -d mcts-BH*`;
+#   do
+#   cd $d
+# for c in `ls -d tree-?`;
+#   do
+#   cd $c
   for f in `ls *.dot`; 
     do
     dot -Tpng $f -o ${f%\.*}.png
@@ -14,10 +14,10 @@ for c in `ls -d tree-?`;
 #     do
 #     dot -Tsvg $f -o ${f%\.*}.svg
 #   done
-  cd ..
-done
-  cd ..
-done
+#   cd ..
+# done
+#   cd ..
+# done
 
 #   for f in `ls full-tree*`; 
 #     do

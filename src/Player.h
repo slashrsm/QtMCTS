@@ -28,13 +28,13 @@ protected:
         QVector<bool> moves;
         QVector<bool> reach_minus_one;
         QVector<char> positions;
-	void print_moves();
         QVector<QString> pgn_moves;
 	char choose_random_move(int *, int);
 	bool write_pgn;
 	bool save_history;
 
 public:
+        void print_moves();
         QWeakPointer<Player> opponent;
 
 	static int RANDOM_PLAYER;

@@ -12,7 +12,6 @@ using namespace std;
 
 #include "environment.h"
 #include "Queen.h"
-#include "King.h"
 
 Queen::Queen(QSharedPointer<Player> my, QSharedPointer<Player> his, QSharedPointer<Position> pos, bool white) : Piece(my, his, pos, white)  {}
 
@@ -35,7 +34,7 @@ QVector<bool> & Queen::reach(){
                 if(index % 8 != 0){
                     iter = index-1;
                     iter_before = index;
-                        while(iter >= 0 && where_my[iter_before] == '_' && where_his[iter_before] == '_'){
+                        while(iter >= 0 && iter < BOARD_SIZE && index / 8 == iter / 8 && (where_my[iter_before] == '_' || iter_before == index) && where_his[iter_before] == '_'){
                             this->saved_reach[iter] = true;
                             iter_before = iter;
                             iter--;
@@ -46,7 +45,7 @@ QVector<bool> & Queen::reach(){
                 if(index % 8 != 7){
                     iter = index+1;
                     iter_before = index;
-                        while(iter >= 0 && where_my[iter_before] == '_' && where_his[iter_before] == '_'){
+                        while(iter >= 0 && iter < BOARD_SIZE && index / 8 == iter / 8 && (where_my[iter_before] == '_' || iter_before == index) && where_his[iter_before] == '_'){
                             this->saved_reach[iter] = true;
                             iter_before = iter;
                             iter++;
@@ -58,7 +57,7 @@ QVector<bool> & Queen::reach(){
                 if(index / 8 != 7){
                     iter = index+8;
                     iter_before = index;
-                        while(iter >= 0 && where_my[iter_before] == '_' && where_his[iter_before] == '_'){
+                        while(iter >= 0 && iter < BOARD_SIZE && (where_my[iter_before] == '_' || iter_before == index) && where_his[iter_before] == '_'){
                             this->saved_reach[iter] = true;
                             iter_before = iter;
                             iter += 8;
@@ -69,7 +68,7 @@ QVector<bool> & Queen::reach(){
                 if(index / 8 != 0){
                     iter = index-8;
                     iter_before = index;
-                        while(iter >= 0 && where_my[iter_before] == '_' && where_his[iter_before] == '_'){
+                        while(iter >= 0 && iter < BOARD_SIZE && (where_my[iter_before] == '_' || iter_before == index) && where_his[iter_before] == '_'){
                             this->saved_reach[iter] = true;
                             iter_before = iter;
                             iter -= 8;
@@ -162,7 +161,7 @@ QVector<bool>& Queen::moves(){
                 if(index % 8 != 0){
                     iter = index-1;
                     iter_before = index;
-                        while(iter >= 0 && where_my[iter_before] == '_' && where_his[iter_before] == '_'){
+                        while(iter >= 0 && iter < BOARD_SIZE && index / 8 == iter / 8 && (where_my[iter_before] == '_' || iter_before == index) && where_his[iter_before] == '_'){
                             this->saved_moves[iter] = where_my[iter] == '_' ? true : false;
                             iter_before = iter;
                             iter--;
@@ -173,7 +172,7 @@ QVector<bool>& Queen::moves(){
                 if(index % 8 != 7){
                     iter = index+1;
                     iter_before = index;
-                        while(iter >= 0 && where_my[iter_before] == '_' && where_his[iter_before] == '_'){
+                        while(iter >= 0 && iter < BOARD_SIZE && index / 8 == iter / 8 && (where_my[iter_before] == '_' || iter_before == index) && where_his[iter_before] == '_'){
                             this->saved_moves[iter] = where_my[iter] == '_' ? true : false;
                             iter_before = iter;
                             iter++;
@@ -185,7 +184,7 @@ QVector<bool>& Queen::moves(){
                 if(index / 8 != 7){
                     iter = index+8;
                     iter_before = index;
-                        while(iter >= 0 && where_my[iter_before] == '_' && where_his[iter_before] == '_'){
+                        while(iter >= 0 && iter < BOARD_SIZE && (where_my[iter_before] == '_' || iter_before == index) && where_his[iter_before] == '_'){
                             this->saved_moves[iter] = where_my[iter] == '_' ? true : false;
                             iter_before = iter;
                             iter += 8;
@@ -196,7 +195,7 @@ QVector<bool>& Queen::moves(){
                 if(index / 8 != 0){
                     iter = index-8;
                     iter_before = index;
-                        while(iter >= 0 && where_my[iter_before] == '_' && where_his[iter_before] == '_'){
+                        while(iter >= 0 && iter < BOARD_SIZE && (where_my[iter_before] == '_' || iter_before == index) && where_his[iter_before] == '_'){
                             this->saved_moves[iter] = where_my[iter] == '_' ? true : false;
                             iter_before = iter;
                             iter -= 8;

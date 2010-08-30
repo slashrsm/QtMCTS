@@ -93,6 +93,10 @@ QSharedPointer<Player> Game::play(){
 //		int pos2 = this->white->situation->at(0)->position->get_positon();
 //		char king = black_sit[pos1];
 
+
+                if(!this->simulation)
+                this->on_move->print_moves();
+
 		move = this->on_move->move(this->timelimit);
 		this->on_hold->opponent_moved(move);
 		tmp = this->on_hold;
@@ -172,7 +176,7 @@ bool Game::cannot_move(){
 /*
  * Checks if white still has 3 pieces.
  */
-bool Game::white_lost_piece(){ return this->white->situation->size() < 3; }
+bool Game::white_lost_piece(){ return this->white->situation->size() < 2; }
 
 /*
  * Prints situation so std output.

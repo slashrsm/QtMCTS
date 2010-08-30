@@ -84,7 +84,7 @@
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString">Debug</value>
    <valuelist key="abstractProcess.Environment" type="QVariantList">
     <value type="QString">COLORFGBG=15;0</value>
-    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-C3I4jhs505,guid=159814959a843bee6675907c4c5bc420</value>
+    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-fqpu8H9ZlZ,guid=b52d8ff8a767057aea92147e4c7b54b0</value>
     <value type="QString">DESKTOP_SESSION=kde</value>
     <value type="QString">DISPLAY=:0</value>
     <value type="QString">DM_CONTROL=/var/run/xdmctl</value>
@@ -95,7 +95,7 @@
     <value type="QString">EC2_URL=http://192.168.1.118:8773/services/Eucalyptus</value>
     <value type="QString">EC2_USER_ID=000100729354</value>
     <value type="QString">EUCALYPTUS_CERT=/home/slashrsm/.euca/cloud-cert.pem</value>
-    <value type="QString">GPG_AGENT_INFO=/tmp/gpg-BqY7SQ/S.gpg-agent:2022:1</value>
+    <value type="QString">GPG_AGENT_INFO=/tmp/gpg-pXasNV/S.gpg-agent:1979:1</value>
     <value type="QString">GS_LIB=/home/slashrsm/.fonts</value>
     <value type="QString">GTK2_RC_FILES=/etc/gtk-2.0/gtkrc:/home/slashrsm/.gtkrc-2.0:/home/slashrsm/.gtkrc-2.0-kde4:/home/slashrsm/.kde/share/config/gtkrc-2.0</value>
     <value type="QString">GTK_RC_FILES=/etc/gtk/gtkrc:/home/slashrsm/.gtkrc::/home/slashrsm/.kde/share/config/gtkrc</value>
@@ -105,8 +105,8 @@
     <value type="QString">KDE_MULTIHEAD=false</value>
     <value type="QString">KDE_SESSION_UID=1000</value>
     <value type="QString">KDE_SESSION_VERSION=4</value>
-    <value type="QString">KONSOLE_DBUS_SERVICE=:1.37</value>
-    <value type="QString">KONSOLE_DBUS_SESSION=/Sessions/3</value>
+    <value type="QString">KONSOLE_DBUS_SERVICE=:1.57</value>
+    <value type="QString">KONSOLE_DBUS_SESSION=/Sessions/1</value>
     <value type="QString">LANG=sl_SI.UTF-8</value>
     <value type="QString">LANGUAGE=</value>
     <value type="QString">LD_LIBRARY_PATH=/usr/lib/qtcreator:</value>
@@ -116,23 +116,23 @@
     <value type="QString">LS_COLORS=rs=0:di=01;34:ln=01;36:hl=44;37:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.axa=00;36:*.oga=00;36:*.spx=00;36:*.xspf=00;36:</value>
     <value type="QString">PATH=/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games</value>
     <value type="QString">PROFILEHOME=</value>
-    <value type="QString">PWD=/etc/kde4/kdm</value>
+    <value type="QString">PWD=/home/slashrsm/workspace/QtMCTS</value>
     <value type="QString">QTDIR=/usr/share/qt4</value>
     <value type="QString">QT_PLUGIN_PATH=/home/slashrsm/.kde/lib/kde4/plugins/:/usr/lib/kde4/plugins/</value>
     <value type="QString">S3_URL=http://192.168.1.118:8773/services/Walrus</value>
-    <value type="QString">SESSION_MANAGER=local/vol:@/tmp/.ICE-unix/2176,unix/vol:/tmp/.ICE-unix/2176</value>
+    <value type="QString">SESSION_MANAGER=local/vol:@/tmp/.ICE-unix/2136,unix/vol:/tmp/.ICE-unix/2136</value>
     <value type="QString">SHELL=/bin/bash</value>
     <value type="QString">SHLVL=1</value>
     <value type="QString">SPEECHD_PORT=7560</value>
-    <value type="QString">SSH_AGENT_PID=2021</value>
-    <value type="QString">SSH_AUTH_SOCK=/tmp/ssh-uZPXzj1966/agent.1966</value>
+    <value type="QString">SSH_AGENT_PID=1978</value>
+    <value type="QString">SSH_AUTH_SOCK=/tmp/ssh-spHYfg1923/agent.1923</value>
     <value type="QString">TERM=xterm</value>
     <value type="QString">USER=slashrsm</value>
-    <value type="QString">WINDOWID=44040231</value>
+    <value type="QString">WINDOWID=56623143</value>
     <value type="QString">WINDOWPATH=7</value>
     <value type="QString">XCURSOR_THEME=oxy-white</value>
     <value type="QString">XDG_DATA_DIRS=/usr/share:/usr/share:/usr/local/share</value>
-    <value type="QString">XDG_SESSION_COOKIE=b57d4e0e9904e41b2caebf8649958874-1281082399.498966-303851188</value>
+    <value type="QString">XDG_SESSION_COOKIE=b57d4e0e9904e41b2caebf8649958874-1283151023.463961-2144601689</value>
     <value type="QString">XDM_MANAGED=method=classic</value>
     <value type="QString">_=/usr/bin/qtcreator</value>
    </valuelist>
@@ -154,7 +154,7 @@
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString">Debug</value>
    <valuelist key="abstractProcess.Environment" type="QVariantList">
     <value type="QString">COLORFGBG=15;0</value>
-    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-C3I4jhs505,guid=159814959a843bee6675907c4c5bc420</value>
+    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-fqpu8H9ZlZ,guid=b52d8ff8a767057aea92147e4c7b54b0</value>
     <value type="QString">DESKTOP_SESSION=kde</value>
     <value type="QString">DISPLAY=:0</value>
     <value type="QString">DM_CONTROL=/var/run/xdmctl</value>
@@ -165,7 +165,7 @@
     <value type="QString">EC2_URL=http://192.168.1.118:8773/services/Eucalyptus</value>
     <value type="QString">EC2_USER_ID=000100729354</value>
     <value type="QString">EUCALYPTUS_CERT=/home/slashrsm/.euca/cloud-cert.pem</value>
-    <value type="QString">GPG_AGENT_INFO=/tmp/gpg-BqY7SQ/S.gpg-agent:2022:1</value>
+    <value type="QString">GPG_AGENT_INFO=/tmp/gpg-pXasNV/S.gpg-agent:1979:1</value>
     <value type="QString">GS_LIB=/home/slashrsm/.fonts</value>
     <value type="QString">GTK2_RC_FILES=/etc/gtk-2.0/gtkrc:/home/slashrsm/.gtkrc-2.0:/home/slashrsm/.gtkrc-2.0-kde4:/home/slashrsm/.kde/share/config/gtkrc-2.0</value>
     <value type="QString">GTK_RC_FILES=/etc/gtk/gtkrc:/home/slashrsm/.gtkrc::/home/slashrsm/.kde/share/config/gtkrc</value>
@@ -175,8 +175,8 @@
     <value type="QString">KDE_MULTIHEAD=false</value>
     <value type="QString">KDE_SESSION_UID=1000</value>
     <value type="QString">KDE_SESSION_VERSION=4</value>
-    <value type="QString">KONSOLE_DBUS_SERVICE=:1.37</value>
-    <value type="QString">KONSOLE_DBUS_SESSION=/Sessions/3</value>
+    <value type="QString">KONSOLE_DBUS_SERVICE=:1.57</value>
+    <value type="QString">KONSOLE_DBUS_SESSION=/Sessions/1</value>
     <value type="QString">LANG=sl_SI.UTF-8</value>
     <value type="QString">LANGUAGE=</value>
     <value type="QString">LD_LIBRARY_PATH=/usr/lib/qtcreator:</value>
@@ -186,23 +186,23 @@
     <value type="QString">LS_COLORS=rs=0:di=01;34:ln=01;36:hl=44;37:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.axa=00;36:*.oga=00;36:*.spx=00;36:*.xspf=00;36:</value>
     <value type="QString">PATH=/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games</value>
     <value type="QString">PROFILEHOME=</value>
-    <value type="QString">PWD=/etc/kde4/kdm</value>
+    <value type="QString">PWD=/home/slashrsm/workspace/QtMCTS</value>
     <value type="QString">QTDIR=/usr/share/qt4</value>
     <value type="QString">QT_PLUGIN_PATH=/home/slashrsm/.kde/lib/kde4/plugins/:/usr/lib/kde4/plugins/</value>
     <value type="QString">S3_URL=http://192.168.1.118:8773/services/Walrus</value>
-    <value type="QString">SESSION_MANAGER=local/vol:@/tmp/.ICE-unix/2176,unix/vol:/tmp/.ICE-unix/2176</value>
+    <value type="QString">SESSION_MANAGER=local/vol:@/tmp/.ICE-unix/2136,unix/vol:/tmp/.ICE-unix/2136</value>
     <value type="QString">SHELL=/bin/bash</value>
     <value type="QString">SHLVL=1</value>
     <value type="QString">SPEECHD_PORT=7560</value>
-    <value type="QString">SSH_AGENT_PID=2021</value>
-    <value type="QString">SSH_AUTH_SOCK=/tmp/ssh-uZPXzj1966/agent.1966</value>
+    <value type="QString">SSH_AGENT_PID=1978</value>
+    <value type="QString">SSH_AUTH_SOCK=/tmp/ssh-spHYfg1923/agent.1923</value>
     <value type="QString">TERM=xterm</value>
     <value type="QString">USER=slashrsm</value>
-    <value type="QString">WINDOWID=44040231</value>
+    <value type="QString">WINDOWID=56623143</value>
     <value type="QString">WINDOWPATH=7</value>
     <value type="QString">XCURSOR_THEME=oxy-white</value>
     <value type="QString">XDG_DATA_DIRS=/usr/share:/usr/share:/usr/local/share</value>
-    <value type="QString">XDG_SESSION_COOKIE=b57d4e0e9904e41b2caebf8649958874-1281082399.498966-303851188</value>
+    <value type="QString">XDG_SESSION_COOKIE=b57d4e0e9904e41b2caebf8649958874-1283151023.463961-2144601689</value>
     <value type="QString">XDM_MANAGED=method=classic</value>
     <value type="QString">_=/usr/bin/qtcreator</value>
    </valuelist>
@@ -227,7 +227,7 @@
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString">Debug</value>
    <valuelist key="abstractProcess.Environment" type="QVariantList">
     <value type="QString">COLORFGBG=15;0</value>
-    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-C3I4jhs505,guid=159814959a843bee6675907c4c5bc420</value>
+    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-fqpu8H9ZlZ,guid=b52d8ff8a767057aea92147e4c7b54b0</value>
     <value type="QString">DESKTOP_SESSION=kde</value>
     <value type="QString">DISPLAY=:0</value>
     <value type="QString">DM_CONTROL=/var/run/xdmctl</value>
@@ -238,7 +238,7 @@
     <value type="QString">EC2_URL=http://192.168.1.118:8773/services/Eucalyptus</value>
     <value type="QString">EC2_USER_ID=000100729354</value>
     <value type="QString">EUCALYPTUS_CERT=/home/slashrsm/.euca/cloud-cert.pem</value>
-    <value type="QString">GPG_AGENT_INFO=/tmp/gpg-BqY7SQ/S.gpg-agent:2022:1</value>
+    <value type="QString">GPG_AGENT_INFO=/tmp/gpg-pXasNV/S.gpg-agent:1979:1</value>
     <value type="QString">GS_LIB=/home/slashrsm/.fonts</value>
     <value type="QString">GTK2_RC_FILES=/etc/gtk-2.0/gtkrc:/home/slashrsm/.gtkrc-2.0:/home/slashrsm/.gtkrc-2.0-kde4:/home/slashrsm/.kde/share/config/gtkrc-2.0</value>
     <value type="QString">GTK_RC_FILES=/etc/gtk/gtkrc:/home/slashrsm/.gtkrc::/home/slashrsm/.kde/share/config/gtkrc</value>
@@ -248,8 +248,8 @@
     <value type="QString">KDE_MULTIHEAD=false</value>
     <value type="QString">KDE_SESSION_UID=1000</value>
     <value type="QString">KDE_SESSION_VERSION=4</value>
-    <value type="QString">KONSOLE_DBUS_SERVICE=:1.37</value>
-    <value type="QString">KONSOLE_DBUS_SESSION=/Sessions/3</value>
+    <value type="QString">KONSOLE_DBUS_SERVICE=:1.57</value>
+    <value type="QString">KONSOLE_DBUS_SESSION=/Sessions/1</value>
     <value type="QString">LANG=sl_SI.UTF-8</value>
     <value type="QString">LANGUAGE=</value>
     <value type="QString">LD_LIBRARY_PATH=/usr/lib/qtcreator:</value>
@@ -259,23 +259,23 @@
     <value type="QString">LS_COLORS=rs=0:di=01;34:ln=01;36:hl=44;37:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.axa=00;36:*.oga=00;36:*.spx=00;36:*.xspf=00;36:</value>
     <value type="QString">PATH=/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games</value>
     <value type="QString">PROFILEHOME=</value>
-    <value type="QString">PWD=/etc/kde4/kdm</value>
+    <value type="QString">PWD=/home/slashrsm/workspace/QtMCTS</value>
     <value type="QString">QTDIR=/usr/share/qt4</value>
     <value type="QString">QT_PLUGIN_PATH=/home/slashrsm/.kde/lib/kde4/plugins/:/usr/lib/kde4/plugins/</value>
     <value type="QString">S3_URL=http://192.168.1.118:8773/services/Walrus</value>
-    <value type="QString">SESSION_MANAGER=local/vol:@/tmp/.ICE-unix/2176,unix/vol:/tmp/.ICE-unix/2176</value>
+    <value type="QString">SESSION_MANAGER=local/vol:@/tmp/.ICE-unix/2136,unix/vol:/tmp/.ICE-unix/2136</value>
     <value type="QString">SHELL=/bin/bash</value>
     <value type="QString">SHLVL=1</value>
     <value type="QString">SPEECHD_PORT=7560</value>
-    <value type="QString">SSH_AGENT_PID=2021</value>
-    <value type="QString">SSH_AUTH_SOCK=/tmp/ssh-uZPXzj1966/agent.1966</value>
+    <value type="QString">SSH_AGENT_PID=1978</value>
+    <value type="QString">SSH_AUTH_SOCK=/tmp/ssh-spHYfg1923/agent.1923</value>
     <value type="QString">TERM=xterm</value>
     <value type="QString">USER=slashrsm</value>
-    <value type="QString">WINDOWID=44040231</value>
+    <value type="QString">WINDOWID=56623143</value>
     <value type="QString">WINDOWPATH=7</value>
     <value type="QString">XCURSOR_THEME=oxy-white</value>
     <value type="QString">XDG_DATA_DIRS=/usr/share:/usr/share:/usr/local/share</value>
-    <value type="QString">XDG_SESSION_COOKIE=b57d4e0e9904e41b2caebf8649958874-1281082399.498966-303851188</value>
+    <value type="QString">XDG_SESSION_COOKIE=b57d4e0e9904e41b2caebf8649958874-1283151023.463961-2144601689</value>
     <value type="QString">XDM_MANAGED=method=classic</value>
     <value type="QString">_=/usr/bin/qtcreator</value>
    </valuelist>
@@ -299,9 +299,9 @@
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString">Debug</value>
    <valuelist key="abstractProcess.Environment" type="QVariantList">
     <value type="QString">COLORFGBG=15;0</value>
-    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-mAMjVmEJbl,guid=217bd88d93e73eff1fb556c94c7a79b8</value>
+    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-fqpu8H9ZlZ,guid=b52d8ff8a767057aea92147e4c7b54b0</value>
     <value type="QString">DESKTOP_SESSION=kde</value>
-    <value type="QString">DISPLAY=:0.0</value>
+    <value type="QString">DISPLAY=:0</value>
     <value type="QString">DM_CONTROL=/var/run/xdmctl</value>
     <value type="QString">EC2_ACCESS_KEY=WKy3rMzOWPouVOxK1p3Ar1C2uRBwa2FBXnCw</value>
     <value type="QString">EC2_CERT=/home/slashrsm/.euca/euca2-admin-8d9d01d9-cert.pem</value>
@@ -310,7 +310,7 @@
     <value type="QString">EC2_URL=http://192.168.1.118:8773/services/Eucalyptus</value>
     <value type="QString">EC2_USER_ID=000100729354</value>
     <value type="QString">EUCALYPTUS_CERT=/home/slashrsm/.euca/cloud-cert.pem</value>
-    <value type="QString">GPG_AGENT_INFO=/tmp/gpg-wdggq6/S.gpg-agent:1969:1</value>
+    <value type="QString">GPG_AGENT_INFO=/tmp/gpg-pXasNV/S.gpg-agent:1979:1</value>
     <value type="QString">GS_LIB=/home/slashrsm/.fonts</value>
     <value type="QString">GTK2_RC_FILES=/etc/gtk-2.0/gtkrc:/home/slashrsm/.gtkrc-2.0:/home/slashrsm/.gtkrc-2.0-kde4:/home/slashrsm/.kde/share/config/gtkrc-2.0</value>
     <value type="QString">GTK_RC_FILES=/etc/gtk/gtkrc:/home/slashrsm/.gtkrc::/home/slashrsm/.kde/share/config/gtkrc</value>
@@ -320,7 +320,7 @@
     <value type="QString">KDE_MULTIHEAD=false</value>
     <value type="QString">KDE_SESSION_UID=1000</value>
     <value type="QString">KDE_SESSION_VERSION=4</value>
-    <value type="QString">KONSOLE_DBUS_SERVICE=:1.242</value>
+    <value type="QString">KONSOLE_DBUS_SERVICE=:1.57</value>
     <value type="QString">KONSOLE_DBUS_SESSION=/Sessions/1</value>
     <value type="QString">LANG=sl_SI.UTF-8</value>
     <value type="QString">LANGUAGE=</value>
@@ -331,23 +331,23 @@
     <value type="QString">LS_COLORS=rs=0:di=01;34:ln=01;36:hl=44;37:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.axa=00;36:*.oga=00;36:*.spx=00;36:*.xspf=00;36:</value>
     <value type="QString">PATH=/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games</value>
     <value type="QString">PROFILEHOME=</value>
-    <value type="QString">PWD=/home/slashrsm</value>
+    <value type="QString">PWD=/home/slashrsm/workspace/QtMCTS</value>
     <value type="QString">QTDIR=/usr/share/qt4</value>
     <value type="QString">QT_PLUGIN_PATH=/home/slashrsm/.kde/lib/kde4/plugins/:/usr/lib/kde4/plugins/</value>
     <value type="QString">S3_URL=http://192.168.1.118:8773/services/Walrus</value>
-    <value type="QString">SESSION_MANAGER=local/vol:@/tmp/.ICE-unix/2122,unix/vol:/tmp/.ICE-unix/2122</value>
+    <value type="QString">SESSION_MANAGER=local/vol:@/tmp/.ICE-unix/2136,unix/vol:/tmp/.ICE-unix/2136</value>
     <value type="QString">SHELL=/bin/bash</value>
     <value type="QString">SHLVL=1</value>
     <value type="QString">SPEECHD_PORT=7560</value>
-    <value type="QString">SSH_AGENT_PID=1968</value>
-    <value type="QString">SSH_AUTH_SOCK=/tmp/ssh-NRrSXe1913/agent.1913</value>
+    <value type="QString">SSH_AGENT_PID=1978</value>
+    <value type="QString">SSH_AUTH_SOCK=/tmp/ssh-spHYfg1923/agent.1923</value>
     <value type="QString">TERM=xterm</value>
     <value type="QString">USER=slashrsm</value>
-    <value type="QString">WINDOWID=94371883</value>
+    <value type="QString">WINDOWID=56623143</value>
     <value type="QString">WINDOWPATH=7</value>
     <value type="QString">XCURSOR_THEME=oxy-white</value>
     <value type="QString">XDG_DATA_DIRS=/usr/share:/usr/share:/usr/local/share</value>
-    <value type="QString">XDG_SESSION_COOKIE=b57d4e0e9904e41b2caebf8649958874-1283094967.263349-1001204497</value>
+    <value type="QString">XDG_SESSION_COOKIE=b57d4e0e9904e41b2caebf8649958874-1283151023.463961-2144601689</value>
     <value type="QString">XDM_MANAGED=method=classic</value>
     <value type="QString">_=/usr/bin/qtcreator</value>
    </valuelist>
@@ -358,7 +358,7 @@
     <value type="QString">-r</value>
    </valuelist>
    <value key="abstractProcess.command" type="QString">/usr/bin/qmake-qt4</value>
-   <value key="abstractProcess.enabled" type="bool">false</value>
+   <value key="abstractProcess.enabled" type="bool">true</value>
    <value key="abstractProcess.workingDirectory" type="QString">/home/slashrsm/workspace/QtMCTS</value>
   </valuemap>
  </data>
@@ -368,9 +368,9 @@
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString">Debug</value>
    <valuelist key="abstractProcess.Environment" type="QVariantList">
     <value type="QString">COLORFGBG=15;0</value>
-    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-mAMjVmEJbl,guid=217bd88d93e73eff1fb556c94c7a79b8</value>
+    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-fqpu8H9ZlZ,guid=b52d8ff8a767057aea92147e4c7b54b0</value>
     <value type="QString">DESKTOP_SESSION=kde</value>
-    <value type="QString">DISPLAY=:0.0</value>
+    <value type="QString">DISPLAY=:0</value>
     <value type="QString">DM_CONTROL=/var/run/xdmctl</value>
     <value type="QString">EC2_ACCESS_KEY=WKy3rMzOWPouVOxK1p3Ar1C2uRBwa2FBXnCw</value>
     <value type="QString">EC2_CERT=/home/slashrsm/.euca/euca2-admin-8d9d01d9-cert.pem</value>
@@ -379,7 +379,7 @@
     <value type="QString">EC2_URL=http://192.168.1.118:8773/services/Eucalyptus</value>
     <value type="QString">EC2_USER_ID=000100729354</value>
     <value type="QString">EUCALYPTUS_CERT=/home/slashrsm/.euca/cloud-cert.pem</value>
-    <value type="QString">GPG_AGENT_INFO=/tmp/gpg-wdggq6/S.gpg-agent:1969:1</value>
+    <value type="QString">GPG_AGENT_INFO=/tmp/gpg-pXasNV/S.gpg-agent:1979:1</value>
     <value type="QString">GS_LIB=/home/slashrsm/.fonts</value>
     <value type="QString">GTK2_RC_FILES=/etc/gtk-2.0/gtkrc:/home/slashrsm/.gtkrc-2.0:/home/slashrsm/.gtkrc-2.0-kde4:/home/slashrsm/.kde/share/config/gtkrc-2.0</value>
     <value type="QString">GTK_RC_FILES=/etc/gtk/gtkrc:/home/slashrsm/.gtkrc::/home/slashrsm/.kde/share/config/gtkrc</value>
@@ -389,7 +389,7 @@
     <value type="QString">KDE_MULTIHEAD=false</value>
     <value type="QString">KDE_SESSION_UID=1000</value>
     <value type="QString">KDE_SESSION_VERSION=4</value>
-    <value type="QString">KONSOLE_DBUS_SERVICE=:1.242</value>
+    <value type="QString">KONSOLE_DBUS_SERVICE=:1.57</value>
     <value type="QString">KONSOLE_DBUS_SESSION=/Sessions/1</value>
     <value type="QString">LANG=sl_SI.UTF-8</value>
     <value type="QString">LANGUAGE=</value>
@@ -400,23 +400,23 @@
     <value type="QString">LS_COLORS=rs=0:di=01;34:ln=01;36:hl=44;37:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.axa=00;36:*.oga=00;36:*.spx=00;36:*.xspf=00;36:</value>
     <value type="QString">PATH=/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games</value>
     <value type="QString">PROFILEHOME=</value>
-    <value type="QString">PWD=/home/slashrsm</value>
+    <value type="QString">PWD=/home/slashrsm/workspace/QtMCTS</value>
     <value type="QString">QTDIR=/usr/share/qt4</value>
     <value type="QString">QT_PLUGIN_PATH=/home/slashrsm/.kde/lib/kde4/plugins/:/usr/lib/kde4/plugins/</value>
     <value type="QString">S3_URL=http://192.168.1.118:8773/services/Walrus</value>
-    <value type="QString">SESSION_MANAGER=local/vol:@/tmp/.ICE-unix/2122,unix/vol:/tmp/.ICE-unix/2122</value>
+    <value type="QString">SESSION_MANAGER=local/vol:@/tmp/.ICE-unix/2136,unix/vol:/tmp/.ICE-unix/2136</value>
     <value type="QString">SHELL=/bin/bash</value>
     <value type="QString">SHLVL=1</value>
     <value type="QString">SPEECHD_PORT=7560</value>
-    <value type="QString">SSH_AGENT_PID=1968</value>
-    <value type="QString">SSH_AUTH_SOCK=/tmp/ssh-NRrSXe1913/agent.1913</value>
+    <value type="QString">SSH_AGENT_PID=1978</value>
+    <value type="QString">SSH_AUTH_SOCK=/tmp/ssh-spHYfg1923/agent.1923</value>
     <value type="QString">TERM=xterm</value>
     <value type="QString">USER=slashrsm</value>
-    <value type="QString">WINDOWID=94371883</value>
+    <value type="QString">WINDOWID=56623143</value>
     <value type="QString">WINDOWPATH=7</value>
     <value type="QString">XCURSOR_THEME=oxy-white</value>
     <value type="QString">XDG_DATA_DIRS=/usr/share:/usr/share:/usr/local/share</value>
-    <value type="QString">XDG_SESSION_COOKIE=b57d4e0e9904e41b2caebf8649958874-1283094967.263349-1001204497</value>
+    <value type="QString">XDG_SESSION_COOKIE=b57d4e0e9904e41b2caebf8649958874-1283151023.463961-2144601689</value>
     <value type="QString">XDM_MANAGED=method=classic</value>
     <value type="QString">_=/usr/bin/qtcreator</value>
    </valuelist>
@@ -441,7 +441,7 @@
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString">Debug</value>
    <valuelist key="abstractProcess.Environment" type="QVariantList">
     <value type="QString">COLORFGBG=15;0</value>
-    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-iNfJBTKkPm,guid=117fc79d15aeef134bd338474c5ce95b</value>
+    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-fqpu8H9ZlZ,guid=b52d8ff8a767057aea92147e4c7b54b0</value>
     <value type="QString">DESKTOP_SESSION=kde</value>
     <value type="QString">DISPLAY=:0</value>
     <value type="QString">DM_CONTROL=/var/run/xdmctl</value>
@@ -452,7 +452,7 @@
     <value type="QString">EC2_URL=http://192.168.1.118:8773/services/Eucalyptus</value>
     <value type="QString">EC2_USER_ID=000100729354</value>
     <value type="QString">EUCALYPTUS_CERT=/home/slashrsm/.euca/cloud-cert.pem</value>
-    <value type="QString">GPG_AGENT_INFO=/tmp/gpg-LxY0SY/S.gpg-agent:1964:1</value>
+    <value type="QString">GPG_AGENT_INFO=/tmp/gpg-pXasNV/S.gpg-agent:1979:1</value>
     <value type="QString">GS_LIB=/home/slashrsm/.fonts</value>
     <value type="QString">GTK2_RC_FILES=/etc/gtk-2.0/gtkrc:/home/slashrsm/.gtkrc-2.0:/home/slashrsm/.gtkrc-2.0-kde4:/home/slashrsm/.kde/share/config/gtkrc-2.0</value>
     <value type="QString">GTK_RC_FILES=/etc/gtk/gtkrc:/home/slashrsm/.gtkrc::/home/slashrsm/.kde/share/config/gtkrc</value>
@@ -462,8 +462,8 @@
     <value type="QString">KDE_MULTIHEAD=false</value>
     <value type="QString">KDE_SESSION_UID=1000</value>
     <value type="QString">KDE_SESSION_VERSION=4</value>
-    <value type="QString">KONSOLE_DBUS_SERVICE=:1.37</value>
-    <value type="QString">KONSOLE_DBUS_SESSION=/Sessions/2</value>
+    <value type="QString">KONSOLE_DBUS_SERVICE=:1.57</value>
+    <value type="QString">KONSOLE_DBUS_SESSION=/Sessions/1</value>
     <value type="QString">LANG=sl_SI.UTF-8</value>
     <value type="QString">LANGUAGE=</value>
     <value type="QString">LD_LIBRARY_PATH=/usr/lib/qtcreator:</value>
@@ -477,19 +477,19 @@
     <value type="QString">QTDIR=/usr/share/qt4</value>
     <value type="QString">QT_PLUGIN_PATH=/home/slashrsm/.kde/lib/kde4/plugins/:/usr/lib/kde4/plugins/</value>
     <value type="QString">S3_URL=http://192.168.1.118:8773/services/Walrus</value>
-    <value type="QString">SESSION_MANAGER=local/vol:@/tmp/.ICE-unix/2118,unix/vol:/tmp/.ICE-unix/2118</value>
+    <value type="QString">SESSION_MANAGER=local/vol:@/tmp/.ICE-unix/2136,unix/vol:/tmp/.ICE-unix/2136</value>
     <value type="QString">SHELL=/bin/bash</value>
     <value type="QString">SHLVL=1</value>
     <value type="QString">SPEECHD_PORT=7560</value>
-    <value type="QString">SSH_AGENT_PID=1963</value>
-    <value type="QString">SSH_AUTH_SOCK=/tmp/ssh-UORHVp1908/agent.1908</value>
+    <value type="QString">SSH_AGENT_PID=1978</value>
+    <value type="QString">SSH_AUTH_SOCK=/tmp/ssh-spHYfg1923/agent.1923</value>
     <value type="QString">TERM=xterm</value>
     <value type="QString">USER=slashrsm</value>
-    <value type="QString">WINDOWID=44040231</value>
+    <value type="QString">WINDOWID=56623143</value>
     <value type="QString">WINDOWPATH=7</value>
     <value type="QString">XCURSOR_THEME=oxy-white</value>
     <value type="QString">XDG_DATA_DIRS=/usr/share:/usr/share:/usr/local/share</value>
-    <value type="QString">XDG_SESSION_COOKIE=b57d4e0e9904e41b2caebf8649958874-1281157466.39612-1362382496</value>
+    <value type="QString">XDG_SESSION_COOKIE=b57d4e0e9904e41b2caebf8649958874-1283151023.463961-2144601689</value>
     <value type="QString">XDM_MANAGED=method=classic</value>
     <value type="QString">_=/usr/bin/qtcreator</value>
    </valuelist>

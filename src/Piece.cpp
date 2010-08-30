@@ -11,6 +11,7 @@ using namespace std;
 #include <cstdlib>
 #include "Piece.h"
 #include "King.h"
+#include "Queen.h"
 #include "Knight.h"
 #include "Bishop.h"
 
@@ -156,6 +157,10 @@ QSharedPointer<Piece> Piece::duplicate(){
         }
         else if(this->short_name() == 'N'){
                 QSharedPointer<Piece> piece(new Knight(my_player.toStrongRef(), his_player.toStrongRef(), new_position, this->white));
+                new_piece = piece;
+        }
+        else if(this->short_name() == 'Q'){
+                QSharedPointer<Piece> piece(new Queen(my_player.toStrongRef(), his_player.toStrongRef(), new_position, this->white));
                 new_piece = piece;
         }
 
