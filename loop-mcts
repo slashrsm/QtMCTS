@@ -1,27 +1,27 @@
 #!/bin/bash
 
 
-uct[0]=0.8
+#uct[0]=0.8
 uct[1]=0.7
 
 
 
 
-#n_tre[0]=30
-n_tre[0]=50
-n_tre[1]=30
+n_tre[0]=90
+#n_tre[0]=50
+#n_tre[1]=30
 #n_tre[4]=120
 #n_tre[5]=200
 
 
 #tim[0]=30
-tim[1]=60
+tim[1]=15
 #tim[2]=90
 #tim[3]=5
 
 game_limit=100
-game_goal="from_corner_to_ok_corner"
-mcts_black_heuristics="heuristics"
+game_goal="KQK"
+mcts_black_heuristics="black-to-center"
 
 
 for tim_val in ${tim[@]}
@@ -30,22 +30,22 @@ do
 #     do
 
     #first run
-    dirname1=mcts-BH_$mcts_black_heuristics-limit_${game_limit}-${game_goal}-${tim_val}s-uct_${uct[0]}-n_${n_tre[0]}
-    dirname2=mcts-BH_$mcts_black_heuristics-limit_${game_limit}-${game_goal}-${tim_val}s-uct_${uct[0]}-n_${n_tre[1]}
-    dirname3=mcts-BH_$mcts_black_heuristics-limit_${game_limit}-${game_goal}-${tim_val}s-uct_${uct[1]}-n_${n_tre[0]}
-    dirname4=mcts-BH_$mcts_black_heuristics-limit_${game_limit}-${game_goal}-${tim_val}s-uct_${uct[1]}-n_${n_tre[1]}
+    dirname1=mcts-BH_$mcts_black_heuristics-limit_${game_limit}-${game_goal}-${tim_val}s-uct_${uct[1]}-n_${n_tre[1]}-1
+    dirname2=mcts-BH_$mcts_black_heuristics-limit_${game_limit}-${game_goal}-${tim_val}s-uct_${uct[1]}-n_${n_tre[1]}-2
+    dirname3=mcts-BH_$mcts_black_heuristics-limit_${game_limit}-${game_goal}-${tim_val}s-uct_${uct[1]}-n_${n_tre[1]}-3
+    dirname4=mcts-BH_$mcts_black_heuristics-limit_${game_limit}-${game_goal}-${tim_val}s-uct_${uct[1]}-n_${n_tre[1]}-4
     mkdir $dirname1
     mkdir $dirname2
     mkdir $dirname3
     mkdir $dirname4
 
-    for ((i=0;i<5;i+=1)); do
+    for ((i=0;i<25;i+=1)); do
 	echo starting: $dirname1
 	cd $dirname1
 	mkdir tree-$((i+1))
 	ln -s ../white_t.txt
 	ln -s ../black_t.txt
-	../QtMCTS $tim_val $game_limit ${n_tre[0]} ${uct[0]} $dirname1 > output.txt &
+	../QtMCTS $tim_val $game_limit ${n_tre[0]} ${uct[1]} $dirname1 > output.txt &
 	cd ..
 
 	echo starting: $dirname2
@@ -53,7 +53,7 @@ do
 	ln -s ../white_t.txt
 	ln -s ../black_t.txt
 	mkdir tree-$((i+1))
-	../QtMCTS $tim_val $game_limit ${n_tre[1]} ${uct[0]} $dirname2 > output.txt &
+	../QtMCTS $tim_val $game_limit ${n_tre[0]} ${uct[1]} $dirname2 > output.txt &
 	cd ..
 
 	echo starting: $dirname3
@@ -69,7 +69,7 @@ do
 	ln -s ../white_t.txt
 	ln -s ../black_t.txt
 	mkdir tree-$((i+1))
-	../QtMCTS $tim_val $game_limit ${n_tre[1]} ${uct[1]} $dirname4 > output.txt &
+	../QtMCTS $tim_val $game_limit ${n_tre[0]} ${uct[1]} $dirname4 > output.txt &
 	cd ..
 
 	while [ "$(pidof -s QtMCTS)" ]; do
