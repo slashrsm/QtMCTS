@@ -172,6 +172,23 @@ QVector<bool>& King::moves(){
                         }
                 }
 
+                //not move into check by rook (shadowed moves)
+                QSharedPointer<Piece> rook = this->his_player.toStrongRef()->get_piece('R');
+                QVector<bool> r_reach;
+                if(rook != NULL){
+                        r_reach = rook->reach();
+                }
+                if(rook != NULL && r_reach[this->position->get_positon()] == true){
+                        if(this->position->get_positon() / 8 == rook->position->get_positon() / 8){ //row
+                                if(index % 8 != 0 && index-1 != rook->position->get_positon()) this->saved_moves[index-1] = false;
+                                if(index % 8 != 7 && index+1 != rook->position->get_positon()) this->saved_moves[index+1] = false;
+                        }
+                        else if(this->position->get_positon() % 8 == rook->position->get_positon() % 8){ //column
+                            if(index / 8 != 0 && index-8 != rook->position->get_positon()) this->saved_moves[index-8] = false;
+                            if(index / 8 != 7 && index+8 != rook->position->get_positon()) this->saved_moves[index+8] = false;
+                        }
+                }
+
 		//debug output
 		if(PRINT_MOVES)
 			this->print_array(this->saved_moves);

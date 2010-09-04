@@ -12,6 +12,7 @@ using namespace std;
 #include "Piece.h"
 #include "RandomPlayer.h"
 #include "KBNKLooserPlayer.h"
+#include "KQKLooserPlayer.h"
 #include "KBNKWinnerPlayer.h"
 #include "TableBlackPlayer.h"
 #include "TableWhitePlayer.h"
@@ -19,6 +20,7 @@ using namespace std;
 #include "Bishop.h"    
 #include "Knight.h"
 #include "Queen.h"
+#include "Rook.h"
 #include "King.h"
 #include "Game.h"
 #include "GoToBorderGame.h"
@@ -134,7 +136,7 @@ int main(int argc, char *argv[]){
 
 	//black player
         QSharedPointer< QVector< QSharedPointer< Piece > > > black_s( new QVector< QSharedPointer< Piece > >() );
-        QSharedPointer<Player> black( new RandomPlayer(black_s) );
+        QSharedPointer<Player> black( new KQKLooserPlayer(black_s) );
 //	RandomPlayer * black = new RandomPlayer(black_s);
 // 	KBNKLooserPlayer * black = new KBNKLooserPlayer(black_s);
 
@@ -145,7 +147,7 @@ int main(int argc, char *argv[]){
 //        QSharedPointer<Position> npos(new Position(3,3));
 //        QSharedPointer<Position> bpos(new Position(2,3));
         QSharedPointer<Piece> k(new King(white, black, kpos, true));
-        QSharedPointer<Piece> q(new Queen(white, black, qpos, true));
+        QSharedPointer<Piece> q(new Rook(white, black, qpos, true));
 //        QSharedPointer<Piece> n(new Knight(white, black, npos, true));
 //        QSharedPointer<Piece> b(new Bishop(white, black, bpos, true));
         white_s->push_back(k);

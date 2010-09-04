@@ -5,8 +5,6 @@
 uct[1]=0.7
 
 
-
-
 n_tre[0]=90
 #n_tre[0]=50
 #n_tre[1]=30
@@ -15,13 +13,13 @@ n_tre[0]=90
 
 
 #tim[0]=30
-tim[1]=15
+tim[1]=30
 #tim[2]=90
 #tim[3]=5
 
 game_limit=100
-game_goal="KQK"
-mcts_black_heuristics="black-to-center"
+game_goal="KRK"
+mcts_black_heuristics="to_center"
 
 
 for tim_val in ${tim[@]}
@@ -30,10 +28,10 @@ do
 #     do
 
     #first run
-    dirname1=mcts-BH_$mcts_black_heuristics-limit_${game_limit}-${game_goal}-${tim_val}s-uct_${uct[1]}-n_${n_tre[1]}-1
-    dirname2=mcts-BH_$mcts_black_heuristics-limit_${game_limit}-${game_goal}-${tim_val}s-uct_${uct[1]}-n_${n_tre[1]}-2
-    dirname3=mcts-BH_$mcts_black_heuristics-limit_${game_limit}-${game_goal}-${tim_val}s-uct_${uct[1]}-n_${n_tre[1]}-3
-    dirname4=mcts-BH_$mcts_black_heuristics-limit_${game_limit}-${game_goal}-${tim_val}s-uct_${uct[1]}-n_${n_tre[1]}-4
+    dirname1=mcts-BH_$mcts_black_heuristics-limit_${game_limit}-${game_goal}-${tim_val}s-uct_${uct[1]}-n_${n_tre[0]}-1
+    dirname2=mcts-BH_$mcts_black_heuristics-limit_${game_limit}-${game_goal}-${tim_val}s-uct_${uct[1]}-n_${n_tre[0]}-2
+    dirname3=mcts-BH_$mcts_black_heuristics-limit_${game_limit}-${game_goal}-${tim_val}s-uct_${uct[1]}-n_${n_tre[0]}-3
+    dirname4=mcts-BH_$mcts_black_heuristics-limit_${game_limit}-${game_goal}-${tim_val}s-uct_${uct[1]}-n_${n_tre[0]}-4
     mkdir $dirname1
     mkdir $dirname2
     mkdir $dirname3
