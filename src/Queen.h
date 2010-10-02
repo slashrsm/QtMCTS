@@ -15,7 +15,7 @@ using namespace std;
 class Queen: public Piece {
     Q_OBJECT
 public:
-        Queen(QSharedPointer<Player>, QSharedPointer<Player>, QSharedPointer<Position>, bool);
+        Queen(QSharedPointer<Position>, bool);
         ~Queen();
         QVector<bool> & reach();
         QVector<bool> & moves();

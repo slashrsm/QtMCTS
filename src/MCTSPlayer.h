@@ -35,6 +35,10 @@ public:
 	bool is_at_border();
 	bool is_in_corner();
 	bool is_in_corner_area();
+
+        static int MCTS_WHITE_SIM_TYPE;
+        static int MCTS_BLACK_SIM_TYPE;
+        static int MCTS_SIM_LIMIT;
 };
 
 #endif /* MCTSPLAYER_H_ */

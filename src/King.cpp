@@ -13,7 +13,7 @@ using namespace std;
 #include "environment.h"
 #include "King.h"
 
-King::King(QSharedPointer<Player> my, QSharedPointer<Player> his, QSharedPointer<Position> pos, bool white) : Piece(my, his, pos, white)  {}
+King::King(QSharedPointer<Position> pos, bool white) : Piece(pos, white)  {}
 
 King::~King(){}
 
@@ -79,7 +79,7 @@ QVector<bool>& King::moves(){
                 QVector<char> where = this->my_player.toStrongRef()->where_are_pieces();
                 this->saved_moves.fill(false,BOARD_SIZE);
 		char index = this->position->get_positon();
-                char king = this->his_player.toStrongRef()->situation->at(0)->position->get_positon();
+                char king = this->his_player.toStrongRef()->get_piece('K')->position->get_positon();
 
 		//check not to move on my player
 		if(index >= 9) this->saved_moves[index-9]  = where[index-9] == '_' ? true : false;

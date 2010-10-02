@@ -26,6 +26,8 @@ int Game::GO_TO_BORDER = 0;
 int Game::GO_TO_CORNER = 1;
 int Game::GO_TO_CORNER_DIRECT = 3;
 int Game::GO_TO_CHECKMATE = 4;
+int Game::BLACK_START_PIECE_COUNT = 0;
+int Game::WHITE_START_PIECE_COUNT = 0;
 
 /*
  * Constructor.
@@ -82,20 +84,9 @@ QSharedPointer<Player> Game::play(){
 
 	//play game
 	while(this->moves <= this->maxmoves && !this->game_ended()){
-		//debug
-//		if (this->simulation ) { //if (PRINT_EVERY_GAME_SITUATION) {
-//			this->print_situation();
-//		}
 
-		//TODO delete!!!!
-//		vector<char> black_sit = this->black->where_are_pieces();
-//		int pos1 = this->black->situation->at(0)->position->get_positon();
-//		int pos2 = this->white->situation->at(0)->position->get_positon();
-//		char king = black_sit[pos1];
-
-
-                if(!this->simulation)
-                this->on_move->print_moves();
+//                if(!this->simulation)
+//                this->on_move->print_moves();
 
 		move = this->on_move->move(this->timelimit);
 		this->on_hold->opponent_moved(move);
@@ -176,7 +167,7 @@ bool Game::cannot_move(){
 /*
  * Checks if white still has 3 pieces.
  */
-bool Game::white_lost_piece(){ return this->white->situation->size() < 2; }
+bool Game::white_lost_piece(){ return this->white->situation->size() < Game::WHITE_START_PIECE_COUNT; }
 
 /*
  * Prints situation so std output.

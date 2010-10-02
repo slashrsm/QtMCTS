@@ -15,7 +15,7 @@ using namespace std;
 class Bishop: public Piece {
     Q_OBJECT
 public:
-        Bishop(QSharedPointer<Player>, QSharedPointer<Player>, QSharedPointer<Position>, bool);
+        Bishop(QSharedPointer<Position>, bool);
 	~Bishop();
         QVector<bool> & reach();
         QVector<bool> & moves();

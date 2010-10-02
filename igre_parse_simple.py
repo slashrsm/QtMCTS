@@ -3,15 +3,15 @@
 
 import sys
 
-uct = [0.7, 0.8]
-n_tre = [30,50]
-tim = [60]
+uct = [0.7]
+n_tre = [90]
+tim = [30]
 
 for t in tim:
   for n_value in n_tre:
     
     for uct_value in uct:
-      string = "./mcts-BH_heuristics-limit_100-from_corner_to_ok_corner-"+str(t)+"s-uct_"+str(uct_value)+"-n_"+str(n_value)+"/mcts-BH_heuristics-limit_100-from_corner_to_ok_corner-"+str(t)+"s-uct_"+str(uct_value)+"-n_"+str(n_value)+".pgn"
+      string = "./mcts-BH_random-limit_100-KRK-"+str(t)+"s-uct_"+str(uct_value)+"-n_"+str(n_value)+".pgn"
       f = open(string)
       games = 0
       wins = 0

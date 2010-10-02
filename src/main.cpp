@@ -12,8 +12,8 @@ using namespace std;
 #include "Piece.h"
 #include "RandomPlayer.h"
 #include "KBNKLooserPlayer.h"
-#include "KQKLooserPlayer.h"
-#include "KBNKWinnerPlayer.h"
+#include "ToCenterPlayer.h"
+#include "ApproachKingPlayer.h"
 #include "TableBlackPlayer.h"
 #include "TableWhitePlayer.h"
 #include "MCTSPlayer.h"
@@ -26,6 +26,7 @@ using namespace std;
 #include "GoToBorderGame.h"
 #include "GoToCornerGame.h"
 #include "GoToCornerDirectGame.h"
+#include "ConfigParse.h"
 
 #include <iostream>
 #include <vector>
@@ -33,6 +34,8 @@ using namespace std;
 #include <ctime>
 #include <cstdlib>
 #include <cstring>
+
+ConfigParse * config;
 
 void fill_mappings(){
         // Coordinates mapping
@@ -70,109 +73,82 @@ void fill_mappings(){
 
 }
 
-int main(int argc, char *argv[]){
+int main(int argc, char *argv[], char* envp[]){
     QCoreApplication app(argc, argv);
 
-	if(argc == 0 || (argc > 1 && argv[1][0] == 'h')){
-		cout << "Parameters to give:" << endl;
-		cout << "\t1. Time limit for one move [s]" << endl;
-		cout << "\t2. Limit for game length" << endl;
-		cout << "\t3. N tresshold in nodes" << endl;
-		cout << "\t4. Constant C in UCT expression" << endl;
-		cout << "\t5. PGN filename (without .pgn)" << endl;
-		cout << endl;
-		cout << "Author: JAnez Urevc, janez@janezek.org" << endl;
+    //Short help message.
+    if((argc > 1 && argv[1][0] == 'h')){
+        qDebug() << "Config file name must be passed to program as argument.";
+        qDebug() << "If no argument is passed program tries to load ./config.conf.";
 
-		exit(0);
-	}
+        exit(0);
+    }
 
-	/* Read params:
-	 * 	1. Time limit for one move
-	 * 	2. Limit for game length
-	 * 	3. N tresshold in nodes
-	 * 	4. Constant C in UCT expression
-	 */
-	int N, L, t;
-	float C;
-        QString pgn_filename;
-
-        // Read algorithm params
-	t = atoi(argv[1]); 	if(t == -1) t = 1;
-	L = atoi(argv[2]);	if(L == -1) L = 50;
-	N = atoi(argv[3]);      if(N == -1) N = 100;
-        QString c_str(argv[4]);
-        C = c_str.toFloat();    if(C == -1) C = 0.7;
-
-        // Read pgn filename
-        pgn_filename = argv[5];
-        pgn_filename += ".pgn";
-
-        // Tell algorithm about params
-	MCTSNode::SELECT_TRESSHOLD = N;
-	MCTSNode::UCT_C_CONSTANT = C;
-
-        // Output some data about current run to stdout.
-	time_t curr_time;
-	time(&curr_time);
-	cout << "---===Running MCTS game - KBNK ending===---"  << endl;
-	cout << "Game start: " << ctime(&curr_time);
-        //cout << "Goal: " << "Reach edge" << endl;
-	cout << "Single simulation time: " << t << "s" << endl;
-	cout << "Game length: " << L << " moves" << endl;
-	cout << "N tresshold for selection in MCTS: " << N << " visits" << endl;
-	cout << "C constant in UCT formula: " << C << endl;
-
-	// Some initial stuff (fill mappingss for ccordinates and init random seed
-	fill_mappings();
-	srand ( time(NULL) );
-
-//	int i=0, big_start=clock(), big_end = 0;
-//	while(i < 100){
-        // white player
-        QSharedPointer< QVector< QSharedPointer< Piece > > > white_s( new QVector< QSharedPointer< Piece > >() );
-        QSharedPointer<Player> white( new MCTSPlayer(white_s) );
-//	TableWhitePlayer * white = new TableWhitePlayer(white_s);
-//	RandomPlayer * white = new RandomPlayer(white_s);
-
-	//black player
-        QSharedPointer< QVector< QSharedPointer< Piece > > > black_s( new QVector< QSharedPointer< Piece > >() );
-        QSharedPointer<Player> black( new KQKLooserPlayer(black_s) );
-//	RandomPlayer * black = new RandomPlayer(black_s);
-// 	KBNKLooserPlayer * black = new KBNKLooserPlayer(black_s);
+    //Parse config file
+    if(argc > 1){
+        QString config_fname(argv[1]);
+        config = new ConfigParse(config_fname, envp);
+    }
+    else{
+        config = new ConfigParse("config.conf", envp);
+    }
+    MCTSNode::SELECT_TRESSHOLD = config->N;
+    MCTSNode::UCT_C_CONSTANT = config->C;
 
 
-	//white pieces
-        QSharedPointer<Position> kpos(new Position(0,0));
-        QSharedPointer<Position> qpos(new Position(0,1));
-//        QSharedPointer<Position> npos(new Position(3,3));
-//        QSharedPointer<Position> bpos(new Position(2,3));
-        QSharedPointer<Piece> k(new King(white, black, kpos, true));
-        QSharedPointer<Piece> q(new Rook(white, black, qpos, true));
-//        QSharedPointer<Piece> n(new Knight(white, black, npos, true));
-//        QSharedPointer<Piece> b(new Bishop(white, black, bpos, true));
-        white_s->push_back(k);
-        white_s->push_back(q);
-//        white_s->push_back(n);
-//        white_s->push_back(b);
+    // Output some data about current run to stdout.
+    time_t curr_time;
+    time(&curr_time);
+    qDebug() << "---===Running MCTS game - KBNK ending===---";
+    qDebug() << "Game start: " << QDate::currentDate().toString() << " - " << QTime::currentTime().toString();
+    qDebug() << "Single simulation time: " << config->getString("time") << "s";
+    qDebug() << "Game length: " << config->getString("len") << " moves";
+    qDebug() << "N tresshold for selection in MCTS: " << config->getString("N") << " visits";
+    qDebug() << "C constant in UCT formula: " << config->getString("C");
+    qDebug() << "White player type:" << config->w_type;
+    qDebug() << "Black player type:" << config->b_type;
+    qDebug() << "MCTS white player type:" << config->mcts_w;
+    qDebug() << "MCTS black player type:" << config->mcts_b;
+    qDebug() << "MCTS simulation limit per move:" << config->mcts_sim_limit;
 
-	//black Pieces
-        QSharedPointer<Position> bkpos(new Position(5,5));
-        QSharedPointer<Piece> bk(new King(black, white, bkpos, false));
-        black_s->push_back(bk);
+    // Some initial stuff (fill mappingss for ccordinates and init random seed
+    fill_mappings();
+    srand ( time(NULL) );
 
-	//game
-        int start = 0, end = 0;
-        Game game(white,black,L,t,"MCTS vs. KBNK_Looser",pgn_filename,false,false);
-        start = clock();
-        game.play();
-        end = clock();
-        game.write_pgn();
+    // create players
+    QSharedPointer<Player> white;
+    QSharedPointer<Player> black;
+    white = Player::get_player_from_FEN(config->getString("FEN"), true, config->w_type);
+    black = Player::get_player_from_FEN(config->getString("FEN"), false, config->b_type);
+    Game::WHITE_START_PIECE_COUNT = white->situation->size();
+    Game::BLACK_START_PIECE_COUNT = black->situation->size();
+    MCTSPlayer::MCTS_WHITE_SIM_TYPE = config->mcts_w;
+    MCTSPlayer::MCTS_BLACK_SIM_TYPE = config->mcts_b;
+    MCTSPlayer::MCTS_SIM_LIMIT = config->mcts_sim_limit;
 
-        cout << "Processed in: " << ((double)(end-start))/CLOCKS_PER_SEC << endl;
-//	i++;
-//	}
-//	big_end = clock();
-//	cout << "Total: " << ((double)(big_end-big_start))/CLOCKS_PER_SEC << endl;
+    // game string
+    QString game_string;
+    game_string += "C=";
+    game_string += QString::number(config->C);
+    game_string += " N=";
+    game_string += QString::number(config->N);
+    game_string += " t=";
+    game_string += QString::number(config->time);
+    game_string += " white=";
+    game_string += QString::number(config->w_type);
+    game_string += " black=";
+    game_string += QString::number(config->b_type);
 
-        return 0;
+    //game
+    int start = 0, end = 0;
+    Game game(white,black,config->len,config->time,game_string,config->pgn,false,false);
+    start = clock();
+    game.play();
+    end = clock();
+    game.write_pgn();
+
+    cout << "Processed in: " << ((double)(end-start))/CLOCKS_PER_SEC << endl;
+
+    delete config;
+    return 0;
 }

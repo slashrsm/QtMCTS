@@ -15,7 +15,7 @@ using namespace std;
 class King: public Piece {
     Q_OBJECT
 public:
-        King(QSharedPointer<Player>, QSharedPointer<Player>, QSharedPointer<Position>, bool);
+        King(QSharedPointer<Position>, bool);
 	~King();
         QVector<bool> & reach();
         QVector<bool> & moves();

@@ -222,7 +222,7 @@ void MCTSNode::expanse(char res, QList<char> & moves, QList<int> & pieces, int s
 
 		int next_index = this->get_move(piece, move);
 		if(next_index == -1){
-//			MCTSNode * new_node = new MCTSNode(my_player->duplicate(Player::KBNK_WINNER_PLAYER),his_player->duplicate(Player::KBNK_LOOSER_PLAYER), !my_turn, depth_limit, this, piece, move, depth+1, this->game_type);
+//			MCTSNode * new_node = new MCTSNode(my_player->duplicate(Player::APPROACH_KING_PLAYER),his_player->duplicate(Player::KBNK_LOOSER_PLAYER), !my_turn, depth_limit, this, piece, move, depth+1, this->game_type);
 //			new_node->register_move(piece, move);
 //			new_node->expanse(res, moves, pieces);
 //			this->children.push_back(new_node);
@@ -409,7 +409,7 @@ void MCTSNode::node_title(QTextStream & filename){
  * Cretate new child node to current one and returns pointer to it.
  */
 int MCTSNode::create_new_node(int piece, char move, char res){
-        QSharedPointer<MCTSNode> new_node(new MCTSNode(my_player->duplicate(Player::KBNK_WINNER_PLAYER),his_player->duplicate(Player::KBNK_LOOSER_PLAYER), !my_turn, depth_limit, this, piece, move, depth+1, this->game_type));
+        QSharedPointer<MCTSNode> new_node(new MCTSNode(my_player->duplicate(MCTSPlayer::MCTS_WHITE_SIM_TYPE),his_player->duplicate(MCTSPlayer::MCTS_BLACK_SIM_TYPE), !my_turn, depth_limit, this, piece, move, depth+1, this->game_type));
 	new_node->register_move(piece, move);
 	//new_node->expanse(res, moves, pieces);
 	new_node->add_visit();

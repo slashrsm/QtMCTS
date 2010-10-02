@@ -15,7 +15,7 @@ using namespace std;
 /*
  * Constructors.
  */
-Knight::Knight(QSharedPointer<Player> my, QSharedPointer<Player> his, QSharedPointer<Position> pos, bool white) : Piece(my, his, pos, white) {
+Knight::Knight(QSharedPointer<Position> pos, bool white) : Piece(pos, white) {
 	// TODO Auto-generated constructor stub
 
 }

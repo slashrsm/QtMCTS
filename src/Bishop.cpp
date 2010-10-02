@@ -12,7 +12,7 @@ using namespace std;
 #include "environment.h"
 #include "Bishop.h"
 
-Bishop::Bishop(QSharedPointer<Player> my, QSharedPointer<Player> his, QSharedPointer<Position> pos, bool white) : Piece(my, his, pos, white) {
+Bishop::Bishop(QSharedPointer<Position> pos, bool white) : Piece(pos, white) {
 	// TODO Auto-generated constructor stub
 
 }

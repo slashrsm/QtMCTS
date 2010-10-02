@@ -15,7 +15,7 @@ using namespace std;
 class Knight: public Piece {
     Q_OBJECT
 public:
-        Knight(QSharedPointer<Player>, QSharedPointer<Player>, QSharedPointer<Position>, bool);
+        Knight(QSharedPointer<Position>, bool);
 	~Knight();
         QVector<bool> & reach();
         QVector<bool> & moves();

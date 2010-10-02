@@ -16,7 +16,7 @@ using namespace std;
 class Rook: public Piece {
     Q_OBJECT
 public:
-        Rook(QSharedPointer<Player>, QSharedPointer<Player>, QSharedPointer<Position>, bool);
+        Rook(QSharedPointer<Position>, bool);
         ~Rook();
         QVector<bool> & reach();
         QVector<bool> & moves();

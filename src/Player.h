@@ -38,8 +38,14 @@ public:
         QWeakPointer<Player> opponent;
 
 	static int RANDOM_PLAYER;
-	static int KBNK_WINNER_PLAYER;
+        static int APPROACH_KING_PLAYER;
 	static int KBNK_LOOSER_PLAYER;
+        static int MCTS_PLAYER;
+        static int TABLEBASE_PLAYER;
+        static int TO_CENTER_PLAYER;
+        static QSharedPointer<Player> get_player_from_FEN(QString, bool, int);
+        static QSharedPointer<Piece> create_piece(QChar,int,int);
+        static QSharedPointer<Player> create_player(int, QSharedPointer< QVector< QSharedPointer< Piece > > >);
 
 	//constructors
         Player(QSharedPointer< QVector< QSharedPointer<Piece> > >);

@@ -1,5 +1,5 @@
 /*
- * KQKLooserPlayer.cpp
+ * ToCenterPlayer.cpp
  *
  * Black player (King) in KQK ending. It plays with simple heuristics:
  *  1. Take opponent's piece if possible
@@ -19,16 +19,17 @@ using namespace std;
 #include <cstdlib>
 #include <iostream>
 
-#include "KQKLooserPlayer.h"
+#include "ToCenterPlayer.h"
 #include "King.h"
 
-KQKLooserPlayer::KQKLooserPlayer(QSharedPointer< QVector< QSharedPointer<Piece> > > sit) : Player(sit)  {}
-KQKLooserPlayer::~KQKLooserPlayer() {}
+
+ToCenterPlayer::ToCenterPlayer(QSharedPointer< QVector< QSharedPointer<Piece> > > sit) : Player(sit)  {}
+ToCenterPlayer::~ToCenterPlayer() {}
 
 /*
  * Sets opponent player.
  */
-void KQKLooserPlayer::set_oponent(QSharedPointer<Player> op){
+void ToCenterPlayer::set_oponent(QSharedPointer<Player> op){
         this->opponent = op;
 
         //register him
@@ -42,12 +43,7 @@ void KQKLooserPlayer::set_oponent(QSharedPointer<Player> op){
  * Heuristics:
  * 	1. Smaller or same distance to center
  */
-char KQKLooserPlayer::move(int){
-        //weights
-//	int closer_to_center = 100;
-//	int closer_to_corner = 0;
-//	int other = 1;
-
+char ToCenterPlayer::move(int){
         //king
         QSharedPointer<Piece> king = this->situation->at(0);
         QVector<char> moves = king->list_moves();
@@ -91,7 +87,7 @@ char KQKLooserPlayer::move(int){
 /*
  * Calculates distance to board center.
  */
-char KQKLooserPlayer::distance_to_center(char pos){
+char ToCenterPlayer::distance_to_center(char pos){
         int x = pos % 8;
         int y = pos / 8;
 
@@ -101,7 +97,7 @@ char KQKLooserPlayer::distance_to_center(char pos){
 /*
  * Returns distance between two positions.
  */
-char KQKLooserPlayer::pos_dist(char start, char end){
+char ToCenterPlayer::pos_dist(char start, char end){
         char x1 = start % 8;
         char y1 = start / 8;
         char x2 = end % 8;

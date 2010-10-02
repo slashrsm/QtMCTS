@@ -13,7 +13,7 @@ using namespace std;
 #include "environment.h"
 #include "Rook.h"
 
-Rook::Rook(QSharedPointer<Player> my, QSharedPointer<Player> his, QSharedPointer<Position> pos, bool white) : Piece(my, his, pos, white)  {}
+Rook::Rook(QSharedPointer<Position> pos, bool white) : Piece(pos, white)  {}
 
 Rook::~Rook(){}
 

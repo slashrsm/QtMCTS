@@ -19,6 +19,13 @@ using namespace std;
 #include <fstream>
 
 /*
+  * Static members.
+  */
+int MCTSPlayer::MCTS_BLACK_SIM_TYPE = 0;
+int MCTSPlayer::MCTS_WHITE_SIM_TYPE = 0;
+int MCTSPlayer::MCTS_SIM_LIMIT = -1;
+
+/*
  * Constructors.
  */
 MCTSPlayer::MCTSPlayer(QSharedPointer< QVector< QSharedPointer<Piece> > > sit) : Player(sit) {}
@@ -52,7 +59,7 @@ char MCTSPlayer::move(int timelimit){
 	this->check_simulation_game();
 
 	//run simulations until have time
-	while(((double)(curr_time - start_time))/CLOCKS_PER_SEC < timelimit){
+        while(((double)(curr_time - start_time))/CLOCKS_PER_SEC < timelimit && ( MCTSPlayer::MCTS_SIM_LIMIT == -1 || MCTSPlayer::MCTS_SIM_LIMIT > MCTSNode::SIMULATION_COUNT)){
 //		this->tree->copy_situation();
 
 		if(MCTS_DEBUG) cout << "Starting MCTS." << endl;
@@ -92,7 +99,6 @@ char MCTSPlayer::move(int timelimit){
 	cout << "\tMax tree depth: " << MCTSNode::MAX_DEPTH << endl;
 	cout << "\tNode count: " << MCTSNode::NODE_COUNT << endl;
         cout << "\tSimulation count: " << MCTSNode::SIMULATION_COUNT << endl;
-        cout << "\tEnds in corner: " << MCTSNode::REACHED_CORNER_SIMS << endl << endl;
         MCTSNode::MAX_DEPTH = 0;
         MCTSNode::REACHED_CORNER_SIMS = 0;
 
@@ -150,7 +156,7 @@ void MCTSPlayer::check_simulation_game(){
 
 //	if(is_in_corner_area()){
 //		if(this->game_state != Game::GO_TO_CHECKMATE){
-//                        QSharedPointer<MCTSNode> n(new MCTSNode(this->duplicate(Player::KBNK_WINNER_PLAYER), opponent.toStrongRef()->duplicate(Player::RANDOM_PLAYER), true, maxdepth, NULL, -1, -1, 0, Game::GO_TO_CHECKMATE));
+//                        QSharedPointer<MCTSNode> n(new MCTSNode(this->duplicate(Player::APPROACH_KING_PLAYER), opponent.toStrongRef()->duplicate(Player::RANDOM_PLAYER), true, maxdepth, NULL, -1, -1, 0, Game::GO_TO_CHECKMATE));
 //                        this->tree = n;
 //			this->game_state = Game::GO_TO_CHECKMATE;
 //			cout << "MCTSPlayer: changed to GO_TO_CHECKMATE mode." << endl;
@@ -158,14 +164,14 @@ void MCTSPlayer::check_simulation_game(){
 //	}
 //	else if(is_at_border()){
 //		if(this->game_state != Game::GO_TO_CORNER){
-//			this->tree = new MCTSNode(this->duplicate(Player::KBNK_WINNER_PLAYER), opponent->duplicate(Player::KBNK_LOOSER_PLAYER), true, 100, NULL, -1, -1, 0, Game::GO_TO_CORNER);
+//			this->tree = new MCTSNode(this->duplicate(Player::APPROACH_KING_PLAYER), opponent->duplicate(Player::KBNK_LOOSER_PLAYER), true, 100, NULL, -1, -1, 0, Game::GO_TO_CORNER);
 //			this->game_state = Game::GO_TO_CORNER;
 //			cout << "MCTSPlayer: changed to GO_TO_CORNER mode." << endl;
 //		}
 //	}
 //	else {
 //		if(this->game_state != Game::GO_TO_CORNER_DIRECT){
-//                        QSharedPointer<MCTSNode> n(new MCTSNode(this->duplicate(Player::KBNK_WINNER_PLAYER), opponent.toStrongRef()->duplicate(Player::RANDOM_PLAYER), true, maxdepth, NULL, -1, -1, 0, Game::GO_TO_CORNER_DIRECT));
+//                        QSharedPointer<MCTSNode> n(new MCTSNode(this->duplicate(Player::APPROACH_KING_PLAYER), opponent.toStrongRef()->duplicate(Player::RANDOM_PLAYER), true, maxdepth, NULL, -1, -1, 0, Game::GO_TO_CORNER_DIRECT));
 //                        this->tree = n;
 //			this->game_state = Game::GO_TO_CORNER_DIRECT;
 //			cout << "MCTSPlayer: changed to GO_TO_CORNER_DIRECT mode." << endl;
@@ -173,14 +179,14 @@ void MCTSPlayer::check_simulation_game(){
 //	}
 //	else{
 //		if(this->game_state != Game::GO_TO_BORDER){
-//			this->tree = new MCTSNode(this->duplicate(Player::KBNK_WINNER_PLAYER), opponent->duplicate(Player::KBNK_LOOSER_PLAYER), true, 100, NULL, -1, -1, 0, Game::GO_TO_BORDER);
+//			this->tree = new MCTSNode(this->duplicate(Player::APPROACH_KING_PLAYER), opponent->duplicate(Player::KBNK_LOOSER_PLAYER), true, 100, NULL, -1, -1, 0, Game::GO_TO_BORDER);
 //			this->game_state = Game::GO_TO_BORDER;
 //			cout << "MCTSPlayer: changed to GO_TO_BORDER mode." << endl;
 //		}
 //	}
 
         if(this->game_state == -1){
-            QSharedPointer<MCTSNode> n(new MCTSNode(this->duplicate(Player::RANDOM_PLAYER), opponent.toStrongRef()->duplicate(Player::RANDOM_PLAYER), true, maxdepth, NULL, -1, -1, 0, Game::GO_TO_CHECKMATE));
+            QSharedPointer<MCTSNode> n(new MCTSNode(this->duplicate(MCTSPlayer::MCTS_WHITE_SIM_TYPE), opponent.toStrongRef()->duplicate(MCTSPlayer::MCTS_BLACK_SIM_TYPE), true, maxdepth, NULL, -1, -1, 0, Game::GO_TO_CHECKMATE));
             this->tree = n;
             this->game_state = Game::GO_TO_CHECKMATE;
             cout << "MCTSPlayer: changed to GO_TO_CHECKMATE mode." << endl;

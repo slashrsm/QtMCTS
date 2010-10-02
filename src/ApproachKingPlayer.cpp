@@ -1,5 +1,5 @@
 /*
- * KBNKWinnerPlayer.cpp
+ * ApproachKingPlayer.cpp
  *
  *  Created on: 16.8.2009
  *      Author: slashrsm
@@ -12,19 +12,19 @@ using namespace std;
 #include <algorithm>
 #include <iostream>
 
-#include "KBNKWinnerPlayer.h"
+#include "ApproachKingPlayer.h"
 
 /*
  * Constructors.
  */
-KBNKWinnerPlayer::KBNKWinnerPlayer(QSharedPointer< QVector< QSharedPointer<Piece> > > sit) : Player(sit) {}
+ApproachKingPlayer::ApproachKingPlayer(QSharedPointer< QVector< QSharedPointer<Piece> > > sit) : Player(sit) {}
 
-KBNKWinnerPlayer::~KBNKWinnerPlayer() {}
+ApproachKingPlayer::~ApproachKingPlayer() {}
 
 /*
  * Sets opponent player.
  */
-void KBNKWinnerPlayer::set_oponent(QSharedPointer<Player> op){
+void ApproachKingPlayer::set_oponent(QSharedPointer<Player> op){
 	this->opponent = op;
 
 	//register him
@@ -37,7 +37,7 @@ void KBNKWinnerPlayer::set_oponent(QSharedPointer<Player> op){
  * 	1. Do not loose a piece.
  * 	2. With my king stay within distance 4 to his king.
  */
-char KBNKWinnerPlayer::move(int){
+char ApproachKingPlayer::move(int){
 	//weights
 	int dangerous_position = 0;
 //	int within_distance = 20;
@@ -170,7 +170,7 @@ char KBNKWinnerPlayer::move(int){
 /*
  * Checks if new position is safe.
  */
-bool KBNKWinnerPlayer::is_safe(char pos, int piece){
+bool ApproachKingPlayer::is_safe(char pos, int piece){
         QVector<bool> my_small_reach = this->my_reach_minus_one(situation->at(piece));
         QVector<bool> his_reach = this->opponent.toStrongRef()->my_reach();
 

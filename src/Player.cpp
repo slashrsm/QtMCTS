@@ -18,16 +18,26 @@ using namespace std;
 #include "Player.h"
 #include "Position.h"
 #include "Piece.h"
+#include "King.h"
+#include "Queen.h"
+#include "Rook.h"
+#include "Bishop.h"
+#include "Knight.h"
 #include "RandomPlayer.h"
 #include "KBNKLooserPlayer.h"
-#include "KBNKWinnerPlayer.h"
+#include "ApproachKingPlayer.h"
+#include "MCTSPlayer.h"
+#include "ToCenterPlayer.h"
 
 /*
  * Static members.
  */
 int Player::RANDOM_PLAYER = 0;
-int Player::KBNK_WINNER_PLAYER = 1;
-int Player::KBNK_LOOSER_PLAYER = 2;
+int Player::MCTS_PLAYER = 1;
+int Player::TABLEBASE_PLAYER = 2;
+int Player::TO_CENTER_PLAYER = 3;
+int Player::APPROACH_KING_PLAYER = 4;
+int Player::KBNK_LOOSER_PLAYER = 5;
 
 Player::Player(QSharedPointer< QVector< QSharedPointer<Piece> > > sit) {
 	this->situation = sit;
@@ -379,18 +389,30 @@ QSharedPointer<Player> Player::duplicate(int type){
         }
 
         QSharedPointer<Player> ret;
-        if(type == 0){ // Player::RANDOM_PLAYER:
+        if(type == Player::RANDOM_PLAYER){
                 QSharedPointer<Player> rand(new RandomPlayer(new_situation));
                 return rand;
         }
-        else if (type == 1){ //Player::KBNK_WINNER_PLAYER:
-                QSharedPointer<Player> win(new KBNKWinnerPlayer(new_situation));
+        else if (type == Player::MCTS_PLAYER){
+                QSharedPointer<Player> win(new MCTSPlayer(new_situation));
                 return win;
         }
-        else if ( type == 2){ //Player::KBNK_LOOSER_PLAYER:
+        else if (type == Player::APPROACH_KING_PLAYER){
+                QSharedPointer<Player> win(new ApproachKingPlayer(new_situation));
+                return win;
+        }
+        else if ( type == Player::KBNK_LOOSER_PLAYER){
                 QSharedPointer<Player> loose(new KBNKLooserPlayer(new_situation));
                 return loose;
 	}
+        else if ( type == Player::TO_CENTER_PLAYER){
+                QSharedPointer<Player> loose(new ToCenterPlayer(new_situation));
+                return loose;
+        }
+        else{
+            qDebug() << "[Player::duplicate()] Player type" << type << "unknown. Aborting....";
+            exit(0);
+        }
 
 	return ret;
 }
@@ -404,3 +426,135 @@ QList<char> & Player::move_history(){ return this->game_history_move; }
  * Returns reference to piece history.
  */
 QList<int> & Player::piece_history(){ return this->game_history_piece; }
+
+/**
+  * Creates player from FEN string.
+  *
+  * @param fen FEN string
+  * @param white true if building white player, false if black
+  *
+  * @return pointer to player
+  */
+QSharedPointer<Player> Player::get_player_from_FEN(QString fen, bool white, int p_type){
+    //split fen to be more readeable
+    QStringList list = fen.split(' ', QString::SkipEmptyParts);
+    fen = list.at(0);
+    QStringList pos = fen.split('/', QString::SkipEmptyParts);
+
+    //vector of pieces
+    QSharedPointer< QVector< QSharedPointer< Piece > > > pieces_sit( new QVector< QSharedPointer< Piece > >() );
+
+    //get pos
+    for(int row=0; row < pos.size(); row++){
+        QString code = pos[row];
+        //check if row is empty
+        if(code[0] != '8'){
+            //find pieces in this row
+            int col = 0;
+            for(int i=0; i<code.length(); i++){
+                if(code[i].isNumber()){
+                    col += code[i].digitValue();
+                }
+                else{
+                    if(white && code[i].isUpper()){
+                        if(code[i] == 'K')
+                            pieces_sit->push_front(Player::create_piece(code[i], col, 7-row));
+                        else
+                            pieces_sit->push_back(Player::create_piece(code[i], col, 7-row));
+                    }
+                    else if(!white && code[i].isLower()){
+                        if(code[i] == 'k')
+                            pieces_sit->push_front(Player::create_piece(code[i], col, 7-row));
+                        else
+                            pieces_sit->push_back(Player::create_piece(code[i], col, 7-row));
+                    }
+                    col++;
+                }
+            }
+        }
+    }
+
+    return Player::create_player(p_type,pieces_sit);
+}
+
+/**
+  * Creates and returns piece from char and pos.
+  *
+  * @param code char code of piece
+  * @param x position column
+  * @param y position row
+  */
+QSharedPointer<Piece> Player::create_piece(QChar code, int x, int y){
+    bool white = code.isUpper();
+    code = code.toUpper();
+    QSharedPointer<Piece> ret;
+    if(code == 'K'){
+        QSharedPointer<Position> pos(new Position(x,y));
+        QSharedPointer<Piece> piece(new King(pos, white));
+        ret = piece;
+    }
+    else if(code == 'Q'){
+        QSharedPointer<Position> pos(new Position(x,y));
+        QSharedPointer<Piece> piece(new Queen(pos, white));
+        ret = piece;
+    }
+    else if(code == 'R'){
+        QSharedPointer<Position> pos(new Position(x,y));
+        QSharedPointer<Piece> piece(new Rook(pos, white));
+        ret = piece;
+    }
+    else if(code == 'B'){
+        QSharedPointer<Position> pos(new Position(x,y));
+        QSharedPointer<Piece> piece(new Bishop(pos, white));
+        ret = piece;
+    }
+    else if(code == 'N'){
+        QSharedPointer<Position> pos(new Position(x,y));
+        QSharedPointer<Piece> piece(new Knight(pos, white));
+        ret = piece;
+    }
+//TODO pesant is not implemented
+//    else if(code == 'P'){
+//        QSharedPointer<Position> pos(new Position(x,y));
+//        QSharedPointer<Piece> piece(new Pesant(pos, white));
+//        ret = piece;
+//    }
+
+    return ret;
+}
+
+/**
+  * Creates player.
+  *
+  * @param type player type
+  * @param s player's situation
+  *
+  * @return player
+  */
+QSharedPointer<Player> Player::create_player(int type, QSharedPointer< QVector< QSharedPointer< Piece > > > s){
+    QSharedPointer<Player> ret;
+    //Random Player
+    if(type == 0){
+        QSharedPointer<Player> p(new RandomPlayer(s));
+        ret = p;
+    }
+    //MCTS Player
+    else if(type == 1){
+        QSharedPointer<Player> p(new MCTSPlayer(s));
+        ret = p;
+    }
+    //Table Base
+    else if(type == 2){
+        qDebug() << "[Player::create_player()] Table balse not implemented!";
+        exit(1);
+//        QSharedPointer<Player> p(new TableBlackPlayer(s));
+//        ret = p;
+    }
+    //To center heuristics
+    else if(type == 3){
+        QSharedPointer<Player> p(new ToCenterPlayer(s));
+        ret = p;
+    }
+
+    return ret;
+}

@@ -30,7 +30,7 @@ class Piece : public QObject {
 	public:
                 static QSharedPointer<Player> dummy();
 		bool white;
-                Piece(QSharedPointer<Player>, QSharedPointer<Player>, QSharedPointer<Position>, bool);
+                Piece(QSharedPointer<Position>, bool);
 		virtual ~Piece();
 //		virtual bool is_valid(char);
 		virtual char short_name();

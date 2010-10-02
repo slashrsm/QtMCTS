@@ -1,5 +1,5 @@
-#ifndef KQKLOOSERPLAYER_H
-#define KQKLOOSERPLAYER_H
+#ifndef TOCENTERPLAYER_H
+#define TOCENTERPLAYER_H
 
 using namespace std;
 
@@ -12,15 +12,15 @@ using namespace std;
  * Heuristics:
  * 1. Stay close to centre.
  */
-class KQKLooserPlayer: public Player {
+class ToCenterPlayer: public Player {
     Q_OBJECT
 public:
-        KQKLooserPlayer(QSharedPointer< QVector< QSharedPointer<Piece> > > sit);
-        virtual ~KQKLooserPlayer();
+        ToCenterPlayer(QSharedPointer< QVector< QSharedPointer<Piece> > > sit);
+        virtual ~ToCenterPlayer();
         char move(int);
         char distance_to_center(char);
         char pos_dist(char,char);
         void set_oponent(QSharedPointer<Player>);
 };
 
-#endif // KQKLOOSERPLAYER_H
+#endif // TOCENTERPLAYER_H

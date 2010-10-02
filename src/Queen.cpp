@@ -13,7 +13,7 @@ using namespace std;
 #include "environment.h"
 #include "Queen.h"
 
-Queen::Queen(QSharedPointer<Player> my, QSharedPointer<Player> his, QSharedPointer<Position> pos, bool white) : Piece(my, his, pos, white)  {}
+Queen::Queen(QSharedPointer<Position> pos, bool white) : Piece(pos, white)  {}
 
 Queen::~Queen(){}
 

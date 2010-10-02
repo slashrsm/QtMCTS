@@ -1,12 +1,12 @@
 /*
- * KBNKWinnerPlayer.h
+ * ApproachKingPlayer.h
  *
  *  Created on: 16.8.2009
  *      Author: slashrsm
  */
 
-#ifndef KBNKWINNERPLAYER_H_
-#define KBNKWINNERPLAYER_H_
+#ifndef APPROACHKINGPLAYER_H_
+#define APPROACHKINGPLAYER_H_
 
 using namespace std;
 
@@ -18,14 +18,14 @@ using namespace std;
  * 	1. Do not loose a piece.
  * 	2. With my king stay within distance 4 to his king.
  */
-class KBNKWinnerPlayer: public Player {
+class ApproachKingPlayer: public Player {
     Q_OBJECT
 public:
-        KBNKWinnerPlayer(QSharedPointer< QVector< QSharedPointer<Piece> > >);
-	virtual ~KBNKWinnerPlayer();
+        ApproachKingPlayer(QSharedPointer< QVector< QSharedPointer<Piece> > >);
+        virtual ~ApproachKingPlayer();
 	char move(int);
 	bool is_safe(char, int);
         void set_oponent(QSharedPointer<Player>);
 };
 
-#endif /* KBNKWINNERPLAYER_H_ */
+#endif /* APPROACHKINGPLAYER_H_ */

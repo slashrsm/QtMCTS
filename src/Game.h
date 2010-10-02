@@ -49,6 +49,8 @@ public:
 	static int GO_TO_CORNER;
 	static int GO_TO_CORNER_DIRECT;
 	static int GO_TO_CHECKMATE;
+        static int WHITE_START_PIECE_COUNT;
+        static int BLACK_START_PIECE_COUNT;
 
         Game(QSharedPointer<Player>, QSharedPointer<Player>, int, int, QString, QString, bool, bool);
 	virtual ~Game();

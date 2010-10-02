@@ -18,9 +18,7 @@ using namespace std;
 
 #define BOARD_SIZE 64
 
-Piece::Piece(QSharedPointer<Player> my, QSharedPointer<Player> his, QSharedPointer<Position> pos, bool w) {
-	my_player = my;
-	his_player = his;
+Piece::Piece(QSharedPointer<Position> pos, bool w) {
 	position = pos;
 	white = w;
 }
@@ -149,23 +147,23 @@ QSharedPointer<Piece> Piece::duplicate(){
         QSharedPointer<Piece> new_piece;
         QSharedPointer<Position> new_position(new Position(this->position->get_positon()));
         if(this->short_name() == 'K'){
-                QSharedPointer<Piece> piece(new King(my_player.toStrongRef(), his_player.toStrongRef(), new_position, this->white));
+                QSharedPointer<Piece> piece(new King(new_position, this->white));
                 new_piece = piece;
         }
         else if(this->short_name() == 'B'){
-                QSharedPointer<Piece> piece(new Bishop(my_player.toStrongRef(), his_player.toStrongRef(), new_position, this->white));
+                QSharedPointer<Piece> piece(new Bishop(new_position, this->white));
                 new_piece = piece;
         }
         else if(this->short_name() == 'N'){
-                QSharedPointer<Piece> piece(new Knight(my_player.toStrongRef(), his_player.toStrongRef(), new_position, this->white));
+                QSharedPointer<Piece> piece(new Knight(new_position, this->white));
                 new_piece = piece;
         }
         else if(this->short_name() == 'Q'){
-                QSharedPointer<Piece> piece(new Queen(my_player.toStrongRef(), his_player.toStrongRef(), new_position, this->white));
+                QSharedPointer<Piece> piece(new Queen(new_position, this->white));
                 new_piece = piece;
         }
         else if(this->short_name() == 'R'){
-                QSharedPointer<Piece> piece(new Rook(my_player.toStrongRef(), his_player.toStrongRef(), new_position, this->white));
+                QSharedPointer<Piece> piece(new Rook(new_position, this->white));
                 new_piece = piece;
         }
 
