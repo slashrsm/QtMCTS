@@ -1,0 +1,79 @@
+#!/bin/bash
+
+whattocopy=output.txt
+    #first run
+    dirname1=mcts-1
+    dirname2=mcts-2
+    dirname3=mcts-3
+    dirname4=mcts-4
+    mkdir $dirname1
+    mkdir $dirname2
+    mkdir $dirname3
+    mkdir $dirname4
+
+    for ((i=0;i<25;i+=1)); do
+	echo starting: $dirname1
+	cd $dirname1
+	mkdir tree-$((i+1))
+	ln -s ../white_t.txt
+	ln -s ../black_t.txt
+	../QtMCTS ../config.conf &> output.txt &
+	cd ..
+
+	echo starting: $dirname2
+	cd $dirname2
+	ln -s ../white_t.txt
+	ln -s ../black_t.txt
+	mkdir tree-$((i+1))
+	../QtMCTS ../config.conf &> output.txt &
+	cd ..
+
+	echo starting: $dirname3
+	cd $dirname3
+	ln -s ../white_t.txt
+	ln -s ../black_t.txt
+	mkdir tree-$((i+1))
+	../QtMCTS ../config.conf &> output.txt &
+	cd ..
+
+	echo starting: $dirname4
+	cd $dirname4
+	ln -s ../white_t.txt
+	ln -s ../black_t.txt
+	mkdir tree-$((i+1))
+	../QtMCTS ../config.conf &> output.txt &
+	cd ..
+
+	while [ "$(pidof -s QtMCTS)" ]; do
+	    sleep 30
+	done
+	echo Processing ended... Copying files....
+
+	cd $dirname1
+	mv $whattocopy tree-$((i+1))
+	cd ..
+
+	cd $dirname2
+	mv $whattocopy *.dot tree-$((i+1))
+	cd ..
+
+	cd $dirname3
+	mv $whattocopy *.dot tree-$((i+1))
+	cd ..
+
+	cd $dirname4
+	mv $whattocopy *.dot tree-$((i+1))
+	cd ..
+
+	echo Copying complete....
+
+    done
+
+
+
+#	mv $dirname.png $dirname/
+#    cp ./loop-graphviz $dirname
+#   $dirname/loop-graphviz
+#   done
+done
+
