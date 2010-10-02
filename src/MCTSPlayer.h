@@ -39,6 +39,7 @@ public:
         static int MCTS_WHITE_SIM_TYPE;
         static int MCTS_BLACK_SIM_TYPE;
         static int MCTS_SIM_LIMIT;
+        static int MCTS_OUTPUT_TREE;
 };
 
 #endif /* MCTSPLAYER_H_ */

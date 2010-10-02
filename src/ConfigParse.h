@@ -23,6 +23,7 @@ public:
     int mcts_b;
     int mcts_w;
     int mcts_sim_limit;
+    bool output_tree;
     QString pgn;
 };
 

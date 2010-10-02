@@ -58,4 +58,5 @@ void ConfigParse::loadBasic(){
     this->mcts_b = this->config->pInt("mcts_b");
     this->mcts_w = this->config->pInt("mcts_w");
     this->mcts_sim_limit = this->config->pInt("mcts_sim_limit");
+    this->output_tree = this->config->pBool("output_tree");
 }

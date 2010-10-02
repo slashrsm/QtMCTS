@@ -24,6 +24,7 @@ using namespace std;
 int MCTSPlayer::MCTS_BLACK_SIM_TYPE = 0;
 int MCTSPlayer::MCTS_WHITE_SIM_TYPE = 0;
 int MCTSPlayer::MCTS_SIM_LIMIT = -1;
+int MCTSPlayer::MCTS_OUTPUT_TREE = false;
 
 /*
  * Constructors.
@@ -69,29 +70,26 @@ char MCTSPlayer::move(int timelimit){
 		curr_time = clock();
 	}
 
-        //printout graph
-        QString name = "tree-";
-        name += QString::number(this->pgn_moves.size());
-        name += "-0.dot";
-	this->export_graph(name, 0);
-
-        //printout graph
-//        QString n_full_1 = "full-tree-"+(int)this->pgn_moves.size()+"-0.dot";
-//	this->export_graph(n_full_1, 100);
+        if(MCTSPlayer::MCTS_OUTPUT_TREE){
+            //printout graph
+            QString name = "tree-";
+            name += QString::number(this->pgn_moves.size());
+            name += "-0.dot";
+            this->export_graph(name, 0);
+        }
 
 	//get best move and set new root of tree
 	old_tree = this->tree;
 	this->tree = old_tree->best_move();
 
-//	printout graph
-        QString name1 = "tree-";
-        name1 += QString::number(this->pgn_moves.size());
-        name1 += "-1.dot";
-        this->export_graph(name1, 0);
+        if(MCTSPlayer::MCTS_OUTPUT_TREE){
+      //	printout graph
+            QString name1 = "tree-";
+            name1 += QString::number(this->pgn_moves.size());
+            name1 += "-1.dot";
+            this->export_graph(name1, 0);
+         }
 
-	//printout graph
-//        QString n_full_2 = "full-tree-"+(int)this->pgn_moves.size()+"-1.dot";
-//	this->export_graph(n_full_2, 100);
 
 
 	if(MCTS_DEBUG) cout << "MCTS moved: " << (int)this->tree->piece_moved << ", " << (int)this->tree->move << endl;

@@ -125,6 +125,7 @@ int main(int argc, char *argv[], char* envp[]){
     MCTSPlayer::MCTS_WHITE_SIM_TYPE = config->mcts_w;
     MCTSPlayer::MCTS_BLACK_SIM_TYPE = config->mcts_b;
     MCTSPlayer::MCTS_SIM_LIMIT = config->mcts_sim_limit;
+    MCTSPlayer::MCTS_OUTPUT_TREE = config->output_tree;
 
     // game string
     QString game_string;
