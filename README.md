@@ -12,12 +12,12 @@ We were, however, unable to solve KBNK, but we had quite a lot of success with K
 which is slightly easier to solve. No work has been done on this project for about two years, 
 since it author completely changed it's professional/working focus.
 
-**Author:** Janez Urevc (http://janezurevc.name)
-**Mentor:** Matej Guid (http://www.ailab.si/matej/)
+**Author:** Janez Urevc (http://janezurevc.name)    
+**Mentor:** Matej Guid (http://www.ailab.si/matej/)    
 
-*Faculty of computer and information sciences*
-*Artificial Intelligence Laboratory*
-*University of Ljubljana*
+*Faculty of computer and information sciences*    
+*Artificial Intelligence Laboratory*    
+*University of Ljubljana*    
 http://www.fri.uni-lj.si
 
 This project is released under the [GNU general public license v3](http://www.gnu.org/licenses/gpl.html).
